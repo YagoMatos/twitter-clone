@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+import Timeline from './pages/Timeline';
+import Login from './pages/Login';
 
 class App extends Component {
   render() {
     return (
-      <h1>Hello word</h1>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact component={Login} />
+          <Route path="/timeline" component={Timeline} />
+        </Switch>
+      </BrowserRouter>
     )
   }
 }
