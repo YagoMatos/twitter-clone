@@ -3,15 +3,16 @@ import api from '../services/api';
 import socket from 'socket.io-client';
 
 import Tweet from '../components/Tweet';
+
 import twitterLogo from '../twitter.svg';
 import './Timeline.css';
 
 class Timeline extends Component {
   state = {
     tweets: [],
-    newTweet: ""
+    newTweet: ''
   }
-
+    
   async componentDidMount() {
     this.subscribeToEvents();
     const response = await api.get('tweets');
